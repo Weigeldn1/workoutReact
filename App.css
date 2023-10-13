@@ -1,0 +1,120 @@
+*{
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box; /* when you specify the width and elements, it includes the padding and borders. The padding and borders are subtracted from the specific width and height, keeping the totak size constant */
+}
+
+.container{
+  width: 100%; 
+  /* It makes the container span the entire width of its containing element */
+  min-height: 100vh; 
+  /* makes it at least as tall as the users screnn  */
+  background: linear-gradient(135deg, #153677, #4e085f); 
+  /* 135 deg: diagonal gradient from the bottom left to the top right
+  starting color of the gradient 
+  ending color of the gradient  */
+  padding: 10px; 
+}
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: #fff; 
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px; 
+  border-radius: 10px; 
+}
+
+.todo-app h2 {
+  color: #002765; 
+  display: flex; 
+  align-items: center; 
+  /* vertically */
+}
+.todo-app h2 img {
+  width: 30px; 
+  margin-left: 10px;
+}
+
+.row {
+display: flex; 
+align-items: center; 
+justify-content: space-between;
+background: #edeef0; 
+border-radius: 30px; 
+padding-left: 20px; 
+margin-bottom: 25px;
+margin-top: 20px;
+
+}
+
+input { 
+flex: 1; 
+/* grow and take up available spacee */
+border: none; 
+outline: none; 
+background: transparent; 
+padding: 10px; 
+font-weight: 14px; 
+}
+
+button {
+  border: none; 
+  outline: none; 
+  padding: 16px 50px; 
+  background: #ff5945; 
+  color: #fff; 
+  font-size: 16px;
+  cursor: pointer; 
+  border-radius: 40px; 
+}
+
+ul li {
+  list-style: none; 
+  font-size: 17px; 
+  padding: 12px 8px 12px 50px; 
+  cursor: pointer; 
+  user-select: none; 
+  position: relative; 
+  /* new positioning context for childeren(::before), the position absolute will be positioned relative to the ul li elements  */
+}
+
+ul li::before {
+  content: ""; 
+  position: absolute; 
+  /* you have the flexibility to precisley positon the empty box wherevery you want */
+  height: 28px; 
+  width: 28px; 
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover; 
+  background-position: center; 
+  top: 12px; 
+  left: 8px; 
+}
+
+ul li.checked {
+  color: #555; 
+  text-decoration: line-through; 
+}
+
+ul li.checked::before{
+  background-image: url(images/checked.png); 
+}
+
+ul li span {
+  position: absolute; 
+  right: 0; 
+  top: 5px; 
+  width: 40px; 
+  height: 40px; 
+  font-size: 22px;
+  line-height: 40px; 
+  text-align: center;
+  border-radius: 50px;
+}
+
+ul li span:hover{
+  background: #efeef0; 
+
+}
